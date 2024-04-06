@@ -8,9 +8,9 @@ import { AiFillShopping, AiFillPlusCircle, AiFillDelete } from 'react-icons/ai';
 import { Link, Navigate } from 'react-router-dom';
 
 function DashboardTab() {
-    const context = useContext(myContext)
-    const { mode, product , edithandle,deleteProduct} = context
-    let [isOpen, setIsOpen] = useState(false)
+    const context = useContext(myContext);
+    const { mode } = context;
+    const [product, setProduct] = useState([]);
 
     function closeModal() {
         setIsOpen(false)
