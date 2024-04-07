@@ -1,9 +1,31 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import myContext from '../../context/data/myContext'
+import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
+import { addToCart } from '../../redux/cartSlice'
 
 function ProductCard() {
     const context = useContext(myContext)
-    const { mode } = context
+    const { mode, product } = useContext(myContext);
+
+    const dispatch = useDispatch()
+    const cartItems = useSelector((state) => state.cart)
+    // console.log(cartItems)
+
+    // add to cart
+    const addCart = (product) => {
+        dispatch(addToCart(product))
+        toast.success('add to cart');
+    }
+
+    useEffect(() => {
+        console.log('Products:', product);
+    }, [product]);
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+    }, [cartItems])
+
     return (
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-8 md:py-16 mx-auto">
@@ -24,9 +46,8 @@ function ProductCard() {
                                 {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                                 <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>₹ 349</p>
                                 <div className=" flex justify-center">
-                                    <button type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2">Add To Cart</button>
-
-                                </div>
+                    <button onClick={() => addCart()} type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full py-2">Add To Cart</button>
+                </div>
                             </div>
 
                         </div>
@@ -43,9 +64,8 @@ function ProductCard() {
                                 {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                                 <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>₹ 699</p>
                                 <div className=" flex justify-center">
-                                    <button type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2">Add To Cart</button>
-
-                                </div>
+                    <button onClick={() => addCart()} type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full py-2">Add To Cart</button>
+                </div>
                             </div>
 
                         </div>
@@ -62,9 +82,8 @@ function ProductCard() {
                                 {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                                 <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>₹ 465</p>
                                 <div className=" flex justify-center">
-                                    <button type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2">Add To Cart</button>
-
-                                </div>
+                    <button onClick={() => addCart()} type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full py-2">Add To Cart</button>
+                </div>
                             </div>
 
                         </div>
@@ -81,9 +100,8 @@ function ProductCard() {
                                 {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                                 <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>₹ 349</p>
                                 <div className=" flex justify-center">
-                                    <button type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2">Add To Cart</button>
-
-                                </div>
+                    <button onClick={() => addCart()} type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full py-2">Add To Cart</button>
+                </div>
                             </div>
 
                         </div>
@@ -99,9 +117,8 @@ function ProductCard() {
                                 {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                                 <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>₹ 409</p>
                                 <div className=" flex justify-center">
-                                    <button type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2">Add To Cart</button>
-
-                                </div>
+                    <button onClick={() => addCart()} type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full py-2">Add To Cart</button>
+                </div>
                             </div>
 
                         </div>
@@ -117,9 +134,8 @@ function ProductCard() {
                                 {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                                 <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>₹ 799</p>
                                 <div className=" flex justify-center">
-                                    <button type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2">Add To Cart</button>
-
-                                </div>
+                    <button onClick={() => addCart()} type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full py-2">Add To Cart</button>
+                </div>
                             </div>
 
                         </div>
@@ -135,9 +151,8 @@ function ProductCard() {
                                 {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                                 <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>₹ 200</p>
                                 <div className=" flex justify-center">
-                                    <button type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2">Add To Cart</button>
-
-                                </div>
+                    <button onClick={() => addCart()} type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full py-2">Add To Cart</button>
+                </div>
                             </div>
 
                         </div>
@@ -153,17 +168,24 @@ function ProductCard() {
                                 {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                                 <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>₹ 249</p>
                                 <div className=" flex justify-center">
-                                    <button type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2">Add To Cart</button>
-
-                                </div>
+                    <button onClick={() => addCart()} type="button" className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full py-2">Add To Cart</button>
+                </div>
                             </div>
 
                         </div>
                     </div>
                 </div>
-            </div>
-        </section >
 
+
+                {/* Print fetched products array */}
+                {product && (
+                    <div>
+                        {JSON.stringify(product)}
+                    </div>
+                )}
+
+            </div>
+        </section>
     )
 }
 

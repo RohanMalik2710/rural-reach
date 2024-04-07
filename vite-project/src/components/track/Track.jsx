@@ -42,7 +42,7 @@ function Track() {
                                 </svg>
 
                                 <h2 className="title-font font-medium text-lg text-gray-900" style={{color: mode === 'dark' ? 'white' : ''}}>Exciting Offers</h2>
-                                <p className="leading-relaxed">We provide amazing offers & discounts</p>
+                                <p className="leading-relaxed">We provide amazing offers</p>
                             </div>
                         </div>
                     </div>
