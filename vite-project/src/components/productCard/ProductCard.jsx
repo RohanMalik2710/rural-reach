@@ -8,11 +8,22 @@ import { addToCart } from '../../redux/cartSlice'
 
 function ProductCard() {
     const { mode, getProductData, products } = useContext(myContext);
-  
+    
+    const dispatch = useDispatch()
+    const cartItems = useSelector((state) => state.cart)
+    console.log("Currently",cartItems)
+
+    // add to cart
+    const addCart = (product) => {
+        dispatch(addToCart(product))
+        toast.success('add to cart');
+    }
+
     // Call getProductData to fetch products
     useEffect(() => {
-      getProductData();
-    }, []);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        getProductData();
+    }, [cartItems]);
   
     return (
       <section className="text-gray-600 body-font">
@@ -47,4 +58,3 @@ function ProductCard() {
   }
   
   export default ProductCard;
-  
