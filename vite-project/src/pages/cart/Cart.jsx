@@ -71,11 +71,11 @@ function Cart() {
                         </div>
 
                         <div onClick={() => addCart(item)} className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" style={{cursor:'pointer'}}><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
                         </div>
 
                         <div onClick={() => deleteCart(item)} className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24"><path d="M0 10h24v4h-24z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" style={{cursor:'pointer'}}><path d="M0 10h24v4h-24z"/></svg>
                         </div>
                         
                         
