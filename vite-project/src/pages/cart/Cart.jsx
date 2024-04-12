@@ -37,7 +37,7 @@ function Cart() {
   const deleteCart = (item) => {
     console.log("Delete Attempted",item);
     dispatch(deleteFromCart(item))
-    toast.success('delete g cart');
+    toast.success('Item Deleted');
   }
 
   useEffect(() => {
