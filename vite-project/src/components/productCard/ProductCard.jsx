@@ -11,12 +11,12 @@ function ProductCard() {
     
     const dispatch = useDispatch()
     const cartItems = useSelector((state) => state.cart)
-    console.log("Currently",cartItems)
+    // console.log("Currently",cartItems)
 
     // add to cart
     const addCart = (product) => {
         dispatch(addToCart(product))
-        toast.success('add to cart');
+        toast.success('Added to Cart');
     }
 
     // Call getProductData to fetch products
