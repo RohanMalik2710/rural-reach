@@ -11,7 +11,7 @@ function ProductCard() {
     
     const dispatch = useDispatch()
     const cartItems = useSelector((state) => state.cart)
-    // console.log("Currently",cartItems)
+    console.log("Currently",cartItems)
 
     // add to cart
     const addCart = (product) => {
