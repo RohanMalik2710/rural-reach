@@ -16,7 +16,7 @@ function ProductCard() {
     // add to cart
     const addCart = (product) => {
         dispatch(addToCart(product))
-        toast.success('add to cart');
+        toast.success('Added to Cart');
     }
 
     // Call getProductData to fetch products
